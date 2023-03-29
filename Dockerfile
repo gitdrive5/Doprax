@@ -11,7 +11,7 @@ RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get install -y nodejs
 COPY requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
-COPY start.sh start.sh
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+COPY start.sh start.sh
 RUN chmod +x /app/start.sh
 ENTRYPOINT ["./start.sh"]
